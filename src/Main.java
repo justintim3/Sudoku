@@ -3,8 +3,8 @@ public class Main {
 		Puzzle puzzle = new Puzzle();
 		Display display = new Display(puzzle);
 		new Window(display);
-		MouseInput mouseListener = new MouseInput(display);
-		new KeyInput(mouseListener);
+		Input mouseListener = new Input(display);
+		//new KeyInput(mouseListener);
 		
 		
 		/*
