@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 public class Display extends JPanel {
-	public static final int TILE_SIZE = 80;
+	public static final int TILE_SIZE = 160;
 	private static final Color LIGHT_BLUE = new Color(0xC8, 0xE6, 0xFF);
 	private Puzzle puzzle;
 	private Graphics2D g2d;
@@ -73,16 +73,13 @@ public class Display extends JPanel {
 		int[][] originalState = puzzle.getOriginalPuzzle().getState();
 		int[][] state = puzzle.getState();
 		int n = state.length;
-		int fontSize = 80;
+		int fontSize = 160;
 		int startingX, startingY;
-		
-
-		
 		FontMetrics fm;
 		
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < n; j++) {
-				if(state[i][j] != 0) {
+				if(state[i][j] > 0) {
 					if(originalState[i][j] != 0) {
 						g2d.setColor(Color.BLACK);
 						g2d.setFont(new Font("Arial", Font.BOLD, fontSize));
@@ -95,9 +92,8 @@ public class Display extends JPanel {
 					String number = Integer.toString(state[i][j]);
 					startingX = fm.stringWidth(number);
 					startingY = fm.getHeight();
-					g2d.drawString(Integer.toString(state[i][j]), (i * TILE_SIZE) + ((TILE_SIZE - startingX) / 2), ((j + 1) * TILE_SIZE) + (int)((TILE_SIZE - startingY)/1.5));
-					//g2d.drawString(Integer.toString(state[i][j]), (i * TILE_SIZE) + (TILE_SIZE / 4), (j * TILE_SIZE) - (TILE_SIZE / 8));
-					
+					g2d.drawString(Integer.toString(state[i][j]), (i * TILE_SIZE) + ((TILE_SIZE - startingX) / 2), 
+						((j + 1) * TILE_SIZE) + (int)((TILE_SIZE - startingY)/1.5));
 				}
 			}
 		}
