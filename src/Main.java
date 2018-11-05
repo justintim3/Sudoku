@@ -3,9 +3,7 @@ public class Main {
 		Puzzle puzzle = new Puzzle();
 		Display display = new Display(puzzle);
 		new Window(display);
-		Input mouseListener = new Input(display);
-		//new KeyInput(mouseListener);
-		
+		new Input(display);
 		
 		/*
 		Board solvedState = generateSolvedState();
@@ -18,63 +16,7 @@ public class Main {
 		Display.display(solution);
 		
 		generatePuzzleData();*/
-		
-		
-		
-		
-		
-		
-		/*
-		long startTime, endTime, maxStartTime, count = 0, maxCount = 0, puzzles = 0;
-		double seconds = 0, totalSeconds = 0;
-		Display d = new Display();
-		startTime = System.nanoTime();
-		maxStartTime = System.nanoTime();
-		
-		int[] puzzleTallies = new int[60];
-		
-		//while((System.nanoTime() - startTime) / 1000000000.0 < 10) {
-		//while(count < 100) {
-		while(true) {
-			count++;
-			maxCount++;
-			Board newGame = new Board(9);
-			//d.display(newGame);
-			//newGame.display();
-			//System.out.println((System.nanoTime() - startTime) / 1000000000.0);
-			Solver s = new Solver(newGame);
-			//s.solve();
-			//s.display();
-			
-			Generator g = new Generator(newGame);
-			Board puzzle = g.generatePuzzle();
-			puzzleTallies[g.filledTiles - 17]++;
-			//if(true) {
-			if(g.filledTiles < 22) {
-				puzzles++;
-				System.out.println("\nFilled in tiles: " + g.filledTiles);
-				puzzle.display();
-				System.out.println();
-				s.solve();
-				s.display();
-				endTime = System.nanoTime();
-				System.out.println("Puzzles generated: " + count);
-				System.out.println("Seconds: " + (endTime - startTime) / 1000000000.0);
-				System.out.println("Total 21 puzzles: " + puzzles);
-				System.out.println("Total puzzles generated: " + maxCount);
-				totalSeconds = (endTime - maxStartTime) / 1000000000.0;
-				System.out.println("Total seconds: " + totalSeconds);
-				System.out.println("Average puzzles generated per second: " + maxCount / totalSeconds);
-				System.out.println("Average puzzles generated per 21 puzzle generated: " + maxCount / puzzles);
-				System.out.println("Average time elapsed per 21 puzzle generated: " + totalSeconds / puzzles);
-				printTallies(puzzleTallies);
-				startTime = System.nanoTime();
-				count = 0;
-				if(g.filledTiles < 21) {
-					break;
-				}
-			}
-		}*/
+
 	}
 	/*
 	public static runPuzzle() {

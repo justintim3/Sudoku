@@ -1,6 +1,7 @@
 public class Puzzle {
 	private Board originalPuzzle;
 	private int[][] state;
+	private int[][] solution;
 	private int n;
 	
 	public Puzzle() {
@@ -9,10 +10,14 @@ public class Puzzle {
 		originalPuzzle = g.generatePuzzle();
 		n = originalPuzzle.getN();
 		state = deepCopy(originalPuzzle);
+		getSolution();
 	}
 	
-	public Puzzle(Board puzzle) {
-		this.state = puzzle.getState();
+	public Puzzle(Board board) {
+		originalPuzzle = board;
+		n = originalPuzzle.getN();
+		state = deepCopy(originalPuzzle);
+		getSolution();
 	}
 	
 	public int getN() {
@@ -25,6 +30,10 @@ public class Puzzle {
 	
 	public int[][] getState() {
 		return state;
+	}
+	
+	public void setState(int[][] state) {
+		this.state = state;
 	}
 	
 	public Board getOriginalPuzzle() {
@@ -42,4 +51,31 @@ public class Puzzle {
 		}
 		return copy;
 	}
+	
+	public boolean isSolved() {
+		for(int i = 0; i < n; i++) {
+			for(int j = 0; j < n; j++) {
+				if(solution[i][j] != state[i][j]) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	private void getSolution() {
+		Solver s = new Solver(originalPuzzle);
+		s.solve();
+		solution = s.getSolution().getState();
+	}
+	
+	public void checkSolution() {
+		if(isSolved()) {
+			System.out.println("Solved!");
+		}
+		else {
+			System.out.println("Not solved!");
+		}
+	}
+	
 }

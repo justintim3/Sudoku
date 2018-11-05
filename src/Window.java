@@ -12,7 +12,7 @@ public class Window {
 	public Window(Display puzzleDisplay) {
 		if(isWindows()) {
 			TOPBORDER = 26;
-			BOTTOMBORDER = 3;
+			BOTTOMBORDER = 25;
 			LEFTBORDER = 3;
 			RIGHTBORDER = 3;
 		}
