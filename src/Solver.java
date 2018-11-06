@@ -5,6 +5,7 @@ public class Solver {
 	
 	public Solver(Board b) {
 		pmb = new PotentialMovesBoard(b);
+		pmb.simplify();
 		
 		int[][] board = b.getState();
 		n = board.length;

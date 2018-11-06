@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 public class Display extends JPanel {
-	public static final int TILE_SIZE = 160;
+	public static final int TILE_SIZE = 80;
 	private static final Color LIGHT_BLUE = new Color(0xC8, 0xE6, 0xFF);
 	private Puzzle puzzle;
 	private Graphics2D g2d;
@@ -73,7 +73,7 @@ public class Display extends JPanel {
 		int[][] originalState = puzzle.getOriginalPuzzle().getState();
 		int[][] state = puzzle.getState();
 		int n = state.length;
-		int fontSize = 160;
+		int fontSize = TILE_SIZE;
 		int startingX, startingY;
 		FontMetrics fm;
 		

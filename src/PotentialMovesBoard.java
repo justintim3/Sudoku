@@ -12,11 +12,6 @@ public class PotentialMovesBoard {
 		
 		instantiate();
 		initialize(board);
-		for(int i = 0; i < n; i++) {
-			for(int j = 0; j < n; j++) {
-				removeConflicts(i, j);
-			}
-		}
 	}
 	
 	public PotentialMovesBoard(PotentialMovesBoard b, int x, int y, int value) {
@@ -172,6 +167,14 @@ public class PotentialMovesBoard {
 			}
 		}
 		return new Coordinate(minX, minY);
+	}
+	
+	public void simplify() {
+		for(int i = 0; i < n; i++) {
+			for(int j = 0; j < n; j++) {
+				removeConflicts(i, j);
+			}
+		}
 	}
 	
 	private void removeConflicts(int x, int y) {
