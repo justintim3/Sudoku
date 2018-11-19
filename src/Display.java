@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 public class Display extends JPanel {
-	public static final int TILE_SIZE = 160;
+	public static final int TILE_SIZE = 80;
 	private static final Color LIGHT_BLUE = new Color(0xC8, 0xE6, 0xFF);
 	private Puzzle puzzle;
 	private Graphics2D g2d;
@@ -35,18 +35,19 @@ public class Display extends JPanel {
 	
 	private void drawBoard() {
 		int n = puzzle.getN();
+		int groupSize = (int)Math.sqrt(n);
 		int groupLineWidth = (int)(TILE_SIZE * 0.1);
 	    //paint the board tiles
 		g2d.setColor(Color.BLACK);
 		for(int i = 1; i < n; i++) {
 			for(int j = 1; j < n; j++) {
-	            if(i % 3 == 0) {
+	            if(i % groupSize == 0) {
 	            	g2d.fillRect((i * TILE_SIZE) - (groupLineWidth / 2), 0, groupLineWidth, n * TILE_SIZE);
 	            }
 	            else {
 	            	g2d.drawLine(i * TILE_SIZE, 0, i * TILE_SIZE, n * TILE_SIZE);
 	            }
-	            if(j % 3 == 0) {
+	            if(j % groupSize == 0) {
 	            	g2d.fillRect(0, (j * TILE_SIZE) - (groupLineWidth / 2), n * TILE_SIZE, groupLineWidth);
 	            }
 	            else {
@@ -73,7 +74,7 @@ public class Display extends JPanel {
 		int[][] originalState = puzzle.getOriginalPuzzle().getState();
 		int[][] state = puzzle.getState();
 		int n = state.length;
-		int fontSize = 160;
+		int fontSize = TILE_SIZE;
 		int startingX, startingY;
 		FontMetrics fm;
 		

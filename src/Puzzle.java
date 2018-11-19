@@ -4,11 +4,11 @@ public class Puzzle {
 	private int[][] solution;
 	private int n;
 	
-	public Puzzle() {
-		Board board = new Board(9);
+	public Puzzle(int n) {
+		this.n = n;
+		Board board = new Board(n);
 		Generator g = new Generator(board);
 		originalPuzzle = g.generatePuzzle();
-		n = originalPuzzle.getN();
 		state = deepCopy(originalPuzzle);
 		getSolution();
 	}
