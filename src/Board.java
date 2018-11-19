@@ -12,32 +12,7 @@ public class Board {
 		this.groupSize = (int)Math.sqrt(n);
 		this.state = new int[n][n];
 		randomPuzzle();
-		
 		/*
-		//harder
-		state[0] = new int[]{0,1,0,0,0,0,0,0,0};
-		state[1] = new int[]{0,0,0,0,0,0,0,0,4};
-		state[2] = new int[]{0,0,0,0,0,0,0,2,0};
-		state[3] = new int[]{7,0,4,0,5,0,0,0,0};
-		state[4] = new int[]{0,0,3,0,0,0,8,0,0};
-		state[5] = new int[]{0,0,0,0,9,0,1,0,0};
-		state[6] = new int[]{0,0,2,0,0,4,0,0,3};
-		state[7] = new int[]{0,0,0,0,0,1,0,5,0};
-		state[8] = new int[]{0,0,0,6,0,8,0,0,0};*/
-		
-		/*
-		state[0] = new int[]{0,5,0,0,0,0,0,0,0};
-		state[1] = new int[]{0,0,0,0,7,2,6,0,0};
-		state[2] = new int[]{0,0,0,0,0,0,2,3,0};
-		state[3] = new int[]{0,0,0,0,0,0,1,8,2};
-		state[4] = new int[]{0,9,0,0,0,0,0,0,0};
-		state[5] = new int[]{7,0,0,0,0,0,4,0,0};
-		state[6] = new int[]{0,3,0,7,0,0,0,9,5};
-		state[7] = new int[]{0,0,7,0,0,6,0,0,0};
-		state[8] = new int[]{0,0,2,9,4,0,0,0,0};*/
-		
-		/*
-		//hard
 		state[0] = new int[]{8,0,0,0,0,0,0,0,0};
 		state[1] = new int[]{0,0,7,5,0,0,0,0,9};
 		state[2] = new int[]{0,3,0,0,0,0,1,8,0};
@@ -47,18 +22,6 @@ public class Board {
 		state[6] = new int[]{0,0,2,0,7,0,0,0,4};
 		state[7] = new int[]{0,0,0,0,0,3,6,1,0};
 		state[8] = new int[]{0,0,0,0,0,0,8,0,0};*/
-		
-		
-		/*
-		state[0] = new int[]{5,3,0,0,7,0,0,0,0};
-		state[1] = new int[]{6,0,0,1,9,5,0,0,0};
-		state[2] = new int[]{0,9,8,0,0,0,0,6,0};
-		state[3] = new int[]{8,0,0,0,6,0,0,0,3};
-		state[4] = new int[]{4,0,0,8,0,3,0,0,1};
-		state[5] = new int[]{7,0,0,0,2,0,0,0,6};
-		state[6] = new int[]{0,6,0,0,0,0,2,8,0};
-		state[7] = new int[]{0,0,0,4,1,9,0,0,5};
-		state[8] = new int[]{0,0,0,0,8,0,0,7,9};*/
 	}
 	
 	public Board(int[][] board) {
@@ -86,30 +49,6 @@ public class Board {
 			}
 		}
 	}
-		
-		/*
-		state[0] = new int[]{5,3,5,2,6,9,7,8,1};
-		state[1] = new int[]{6,8,2,5,7,1,4,9,3};
-		state[2] = new int[]{1,9,7,8,3,4,5,6,2};
-		state[3] = new int[]{8,2,6,1,9,5,3,4,7};
-		state[4] = new int[]{3,7,4,6,8,2,9,1,5};
-		state[5] = new int[]{9,5,1,7,4,3,6,2,8};
-		state[6] = new int[]{5,1,9,3,2,6,8,7,4};
-		state[7] = new int[]{2,4,8,9,5,7,1,3,6};
-		state[8] = new int[]{7,6,3,4,1,8,2,5,9};*/
-		
-		/*
-		System.out.println(value());
-		LinkedList<Integer> minConflicts = new LinkedList<Integer>();
-		findMinConflicts(new Coordinate(0,0), minConflicts);
-		
-		System.out.println(minConflicts.size());
-		
-		while(!minConflicts.isEmpty()) {
-			System.out.print(minConflicts.poll() + " ");
-		}
-		System.out.println();*/
-		//this.display();
 
 	public void randomPuzzle() {
 		double count = 0, avgCost = 0, iterations = 1;
@@ -265,32 +204,5 @@ public class Board {
 	
 	public boolean isSolved() {
 		return value() == 0;
-	}
-	
-	public void display() {
-		int columnSize = Integer.toString(n).length() + 1;
-		System.out.print("  ");
-		for(int i = 0; i < n; i++) {
-			System.out.printf("%" + columnSize + "s", (char)('A' + i));	//Print column titles in a format
-		}
-		System.out.println();
-		for(int j = 0; j < n; j++) {
-			System.out.printf("%" + columnSize + "s", (j + 1));	 //Print column titles in a format
-			for(int i = 0; i < n; i++) {
-				if(state[i][j] == 0) {
-					System.out.printf("%" + columnSize + "s", "-");	//Display blank tiles
-				}
-				else {
-					System.out.printf("%" + columnSize + "s", state[i][j]);	//Display board
-				}
-			}
-			System.out.printf(" %-" + columnSize + "s", (j + 1));	//Print column titles in a format
-			System.out.println();
-		}
-		System.out.print("  ");
-		for(int i = 0; i < n; i++) {
-			System.out.printf("%" + columnSize + "s", (char)('A' + i));	//Print column titles in a format
-		}
-		System.out.println();
 	}
 }

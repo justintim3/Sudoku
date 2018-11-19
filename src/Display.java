@@ -35,18 +35,19 @@ public class Display extends JPanel {
 	
 	private void drawBoard() {
 		int n = puzzle.getN();
+		int groupSize = (int)Math.sqrt(n);
 		int groupLineWidth = (int)(TILE_SIZE * 0.1);
 	    //paint the board tiles
 		g2d.setColor(Color.BLACK);
 		for(int i = 1; i < n; i++) {
 			for(int j = 1; j < n; j++) {
-	            if(i % 3 == 0) {
+	            if(i % groupSize == 0) {
 	            	g2d.fillRect((i * TILE_SIZE) - (groupLineWidth / 2), 0, groupLineWidth, n * TILE_SIZE);
 	            }
 	            else {
 	            	g2d.drawLine(i * TILE_SIZE, 0, i * TILE_SIZE, n * TILE_SIZE);
 	            }
-	            if(j % 3 == 0) {
+	            if(j % groupSize == 0) {
 	            	g2d.fillRect(0, (j * TILE_SIZE) - (groupLineWidth / 2), n * TILE_SIZE, groupLineWidth);
 	            }
 	            else {
