@@ -4,6 +4,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
 public class Display extends JPanel {
 	public static final int TILE_SIZE = 80;
@@ -98,6 +99,10 @@ public class Display extends JPanel {
 				}
 			}
 		}
+	}
+	
+	public void displaySolution() {
+		JOptionPane.showMessageDialog(null, "You solved the sudoku puzzle!", "Puzzle Solved!", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	public static void display(Board b) {

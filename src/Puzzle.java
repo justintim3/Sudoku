@@ -68,14 +68,4 @@ public class Puzzle {
 		s.solve();
 		solution = s.getSolution().getState();
 	}
-	
-	public void checkSolution() {
-		if(isSolved()) {
-			System.out.println("Solved!");
-		}
-		else {
-			System.out.println("Not solved!");
-		}
-	}
-	
 }
