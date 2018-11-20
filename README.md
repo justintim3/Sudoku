@@ -48,29 +48,32 @@ Although the sudoku generator is efficient for 9x9 sudoku boards, higher dimensi
 
 ## Sample data generated
 
-21 clue puzzle tally: 1
-22 clue puzzle tally: 10
-23 clue puzzle tally: 183
-24 clue puzzle tally: 1109
-25 clue puzzle tally: 2743
-26 clue puzzle tally: 3280
-27 clue puzzle tally: 1894
-28 clue puzzle tally: 654
-29 clue puzzle tally: 108
-30 clue puzzle tally: 17
-31 clue puzzle tally: 1
-Total puzzles generated : 10000
-Puzzles generated: 10000
-Average solved state generation time (s): 0.00939868448599997
-Average puzzle generation time (s): 0.008429166396199977
-Average puzzle solving time (s): 5.2170906900000244E-5
-Average time elapsed (s): 0.017880021789099948
-Puzzles generated and solved per second: 55.92834347716633389
-Total time elapsed (s): 178.80021789099948
+| Number of Clues | Number of Puzzles |
+|-----------------|-------------------|
+| 21              | 1                 |
+| 22              | 10                |
+| 23              | 183               |
+| 24              | 1109              |
+| 25              | 2743              |
+| 26              | 3280              |
+| 27              | 1894              |
+| 28              | 654               |
+| 29              | 108               |
+| 30              | 17                |
+| 31              | 1                 |
 
-Total puzzles generated: 3195099
-Total seconds: 60810.113969185
-Average puzzles generated per second: 52.542230090525546790449113848852
+Total puzzles generated : 10000  
+Puzzles generated: 10000  
+Average solved state generation time (s): 0.00939868448599997  
+Average puzzle generation time (s): 0.008429166396199977  
+Average puzzle solving time (s): 5.2170906900000244E-5  
+Average time elapsed (s): 0.017880021789099948  
+Puzzles generated and solved per second: 55.92834347716633389  
+Total time elapsed (s): 178.80021789099948  
+
+Total puzzles generated: 3195099  
+Total seconds: 60810.113969185  
+Average puzzles generated per second: 52.542230090525546790449113848852  
 
 | Number of Clues | Puzzles Generated | Percentage of Total Clues            |
 |-----------------|-------------------|--------------------------------------|
