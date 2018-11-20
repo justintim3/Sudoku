@@ -67,7 +67,9 @@ public class Input implements MouseListener, KeyListener {
 				}
 				display.repaint();
 			}
-			puzzle.checkSolution();
+			if(puzzle.isSolved()) {
+				display.displaySolution();
+			}
 		}
     }
 	
