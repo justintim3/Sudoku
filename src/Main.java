@@ -3,8 +3,8 @@ public class Main {
 		int n = 9;
 		Puzzle puzzle = new Puzzle(n);
 		Display display = new Display(puzzle);
-		new Window(display);
-		new Input(display);
+		Input input = new Input(display);
+		new Window(display, input);
 		
 		//generatePuzzleData(n);
 	}

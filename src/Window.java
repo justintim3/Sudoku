@@ -2,7 +2,7 @@ import javax.swing.JFrame;
 import java.awt.Insets;
 
 public class Window {
-	public Window(Display puzzleDisplay) {
+	public Window(Display puzzleDisplay, Input input) {
 		final int BOARD_SIZE = Display.TILE_SIZE * puzzleDisplay.getPuzzle().getN();
 		JFrame frame = new JFrame("Sudoku");
 		
@@ -14,5 +14,7 @@ public class Window {
 		frame.setSize(BOARD_SIZE + insets.left + insets.right, 
 			BOARD_SIZE + insets.top + insets.bottom);
 		frame.setLocationRelativeTo(null);
+		frame.addMouseListener(input);
+		frame.addKeyListener(input);
 	}
 }
