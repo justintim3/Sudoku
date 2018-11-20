@@ -22,7 +22,6 @@ public class Window {
 			LEFTBORDER = 0;
 			RIGHTBORDER = 0;
 		}
-		//System.out.println(OS);
 		JFrame frame = new JFrame("Sudoku");
 		WINDOW_SIZE = Display.TILE_SIZE * puzzleDisplay.getPuzzle().getN();
 		frame.setSize(WINDOW_SIZE + LEFTBORDER + RIGHTBORDER

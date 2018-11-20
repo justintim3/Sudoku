@@ -6,39 +6,7 @@ public class Main {
 		new Window(display);
 		new Input(display);
 		
-		/*
-		Board solvedState = generateSolvedState();
-		Display.display(solvedState);
-		
-		Board puzzle = generatePuzzle(solvedState);
-		Display.display(solvedState);
-		
-		Board solution = solvePuzzle(puzzle);
-		Display.display(solution);*/
-		
 		//generatePuzzleData(n);
-
-	}
-	
-	public static Board generateSolvedState() {
-		Board board = new Board(9);
-		//board.display();
-		return board;
-	}
-	
-	public static Board generatePuzzle(Board board) {
-		Generator g = new Generator(board);
-		Board puzzle = g.generatePuzzle();
-		System.out.println("\nFilled in tiles: " + g.filledTiles);
-		//puzzle.display();
-		return puzzle;
-	}
-	
-	public static Board solvePuzzle(Board puzzle) {
-		Solver s = new Solver(puzzle);
-		System.out.println();
-		s.solve();
-		return s.getSolution();
 	}
 	
 	private static void generatePuzzleData(int n) {
@@ -50,7 +18,6 @@ public class Main {
 		double totalSolvedStateGenTime = 0,  totalPuzzleGenTime = 0, totalPuzzleSolvingTime = 0;
 		double averageSolvedStateGenTime = 0, averagePuzzleGenTime = 0, averagePuzzleSolvingTime = 0;
 		double averageSeconds, totalSeconds = 0, puzzlesGenSolvedPerSec;
-		//long startTime = System.nanoTime();
 		do {
 			solvedStateStartTime = System.nanoTime();
 			Board board = new Board(n);

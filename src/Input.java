@@ -32,7 +32,7 @@ public class Input implements MouseListener, KeyListener {
 	        y = e.getY() / Display.TILE_SIZE;
 	        display.setX(x);
 	        display.setY(y);
-	        display.repaint();    //after everyclick repaint
+	        display.repaint();    //after every click repaint
     	}
 	}
 	

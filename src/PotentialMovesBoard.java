@@ -80,19 +80,15 @@ public class PotentialMovesBoard {
 		potentialMoves = state[x][y].size();
 		if(potentialMoves > 1) {
 			for(int k = 0; k < potentialMoves; k++) {
-				//steps++;
-				//display();
 				PotentialMovesBoard nextMove = new PotentialMovesBoard(this, x, y, this.getState()[x][y].get(k));
 				if(nextMove.isViable()) {
 					if(nextMove.isSolved()) {
-						//System.out.println(steps);
 						return nextMove;
 					}
 					else {
 						PotentialMovesBoard nextMoveSolve;
 						if((nextMoveSolve = nextMove.solve()) != null) {
 							if(nextMoveSolve.isSolved() && nextMoveSolve.isViable()) {
-								//System.out.println(steps);
 								return nextMoveSolve;
 							}
 							else {
@@ -102,9 +98,7 @@ public class PotentialMovesBoard {
 					}
 				}
 			}
-			//System.out.println(steps);
 		}
-		//System.out.println("Return null");
 		if(isSolved()) {
 			return this;
 		}
@@ -118,26 +112,20 @@ public class PotentialMovesBoard {
 			return 1;
 		}
 		int potentialMoves, solutions = 0;
-		//Coordinate mostConstrained = mostConstrained();
-		//int i = mostConstrained.x;
-		//int j = mostConstrained.y;
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < n; j++) {
 				potentialMoves = state[i][j].size();
 				if(potentialMoves > 1) {
 					for(int k = 0; k < potentialMoves; k++) {
-						//display();
 						PotentialMovesBoard nextMove = new PotentialMovesBoard(this, i, j, this.getState()[i][j].get(k));
 						if(nextMove.isViable()) {
 							if(nextMove.isSolved()) {
-								//System.out.println(steps);
 								solutions++;
 							}
 							else {
 								PotentialMovesBoard nextMoveSolve;
 								if((nextMoveSolve = nextMove.solve()) != null) {
 									if(nextMoveSolve.isSolved() && nextMoveSolve.isViable()) {
-										//System.out.println(steps);
 										solutions++;
 									}
 								}
@@ -147,11 +135,9 @@ public class PotentialMovesBoard {
 							}
 						}
 					}
-					//System.out.println(steps);
 				}
 			}
 		}
-		//System.out.println("Return null");
 		return solutions;
 	}
 	
@@ -278,29 +264,5 @@ public class PotentialMovesBoard {
 			}
 		}
 		return false;
-	}
-	
-	public void display() { 
-		int columnSize = Integer.toString(n).length() + 1;
-		System.out.print("  ");
-		for(int i = 0; i < n; i++) {
-			System.out.printf("%" + columnSize + "s", (char)('A' + i));	//Print column titles in a format
-		}
-		System.out.println();
-		for(int j = 0; j < n; j++) {
-			System.out.printf("%" + columnSize + "s", (j + 1));	 //Print column titles in a format
-			for(int i = 0; i < n; i++) {
-				for(int k = 0; k < state[i][j].size(); k++) {
-					System.out.printf("%" + columnSize + "s", state[i][j].get(k));	//Display board
-				}
-			}
-			System.out.printf(" %-" + columnSize + "s", (j + 1));	//Print column titles in a format
-			System.out.println();
-		}
-		System.out.print("  ");
-		for(int i = 0; i < n; i++) {
-			System.out.printf("%" + columnSize + "s", (char)('A' + i));	//Print column titles in a format
-		}
-		System.out.println();
 	}
 }

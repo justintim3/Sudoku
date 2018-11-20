@@ -12,16 +12,6 @@ public class Board {
 		this.groupSize = (int)Math.sqrt(n);
 		this.state = new int[n][n];
 		randomPuzzle();
-		/*
-		state[0] = new int[]{8,0,0,0,0,0,0,0,0};
-		state[1] = new int[]{0,0,7,5,0,0,0,0,9};
-		state[2] = new int[]{0,3,0,0,0,0,1,8,0};
-		state[3] = new int[]{0,6,0,0,0,1,0,5,0};
-		state[4] = new int[]{0,0,9,0,4,0,0,0,0};
-		state[5] = new int[]{0,0,0,7,5,0,0,0,0};
-		state[6] = new int[]{0,0,2,0,7,0,0,0,4};
-		state[7] = new int[]{0,0,0,0,0,3,6,1,0};
-		state[8] = new int[]{0,0,0,0,0,0,8,0,0};*/
 	}
 	
 	public Board(int[][] board) {
@@ -53,15 +43,12 @@ public class Board {
 	public void randomPuzzle() {
 		double count = 0, avgCost = 0, iterations = 1;
 		for(int k = 0; k < iterations; k++) {
-		
-		do {
-			initializeBoard();
-			avgCost += minConflicts();
-			count++;
-		} while(!isSolved());
+			do {
+				initializeBoard();
+				avgCost += minConflicts();
+				count++;
+			} while(!isSolved());
 		}
-		//System.out.println("Iterations: " + (count / iterations));
-		//System.out.println("Average Cost: " + (avgCost / iterations));
 	}
 	
 	private int minConflicts() {
@@ -81,8 +68,6 @@ public class Board {
 			if(searchCost >= maxSteps) {
 				return searchCost;
 			}
-			//display();
-			//System.out.println(value());
 			conflicters.clear();
 			minConflicts.clear();
 		}
