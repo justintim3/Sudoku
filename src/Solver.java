@@ -14,21 +14,14 @@ public class Solver {
 	public void solve() {
 		PotentialMovesBoard solution = pmb.solve();
 		if(solution == null) {
-			//System.out.println("Null");
 		}
 		else {
-			//System.out.println("Not null");
 			convertSolution(solution);
 		}
 	}
 	
 	public int numberOfSolutions() {
-		//System.out.println(pmb.uniqueSolutions(solutions));
 		return pmb.uniqueSolutions();
-	}
-	
-	private boolean hasSolution() {
-		return solution != null;
 	}
 	
 	private void convertSolution(PotentialMovesBoard pmb) {
@@ -42,32 +35,5 @@ public class Solver {
 	
 	public Board getSolution() {
 		return new Board(solution);
-	}
-	
-	public void display() {
-		if(hasSolution()) {
-			int columnSize = Integer.toString(n).length() + 1;
-			System.out.print("  ");
-			for(int i = 0; i < n; i++) {
-				System.out.printf("%" + columnSize + "s", (char)('A' + i));	//Print column titles in a format
-			}
-			System.out.println();
-			for(int j = 0; j < n; j++) {
-				System.out.printf("%" + columnSize + "s", (j + 1));	 //Print column titles in a format
-				for(int i = 0; i < n; i++) {
-					System.out.printf("%" + columnSize + "s", solution[i][j]);	//Display board
-				}
-				System.out.printf(" %-" + columnSize + "s", (j + 1));	//Print column titles in a format
-				System.out.println();
-			}
-			System.out.print("  ");
-			for(int i = 0; i < n; i++) {
-				System.out.printf("%" + columnSize + "s", (char)('A' + i));	//Print column titles in a format
-			}
-			System.out.println();
-		}
-		else {
-			System.out.println("No solution!");
-		}
 	}
 }

@@ -24,7 +24,6 @@ public class Generator {
 			randInt = rand.nextInt(remainingBlankAttempts.size());
 			x = remainingBlankAttempts.get(randInt) % n;
 			y = remainingBlankAttempts.get(randInt) / n;
-			//y = rand.nextInt(n);
 			if(state[x][y] != 0) {
 				temp = state[x][y];
 				state[x][y] = 0;
@@ -33,15 +32,10 @@ public class Generator {
 				if(solutions > 1) {
 					state[x][y] = temp;
 					filledTiles++;
-					//System.out.println("Multiple Solutions");
 				}
-				/*else if(solutions == 1) {
-					//System.out.println("Single Solutions");
-				}*/
 			}
 			remainingBlankAttempts.remove(randInt);
 		}
-		//System.out.println("Filled in tiles: " + filledTiles);
 		return new Board(state);
 	}
 }
