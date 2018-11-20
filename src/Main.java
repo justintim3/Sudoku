@@ -1,10 +1,10 @@
 public class Main {
 	public static void main(String[] args) {
 		int n = 9;
-		/*Puzzle puzzle = new Puzzle(n);
+		Puzzle puzzle = new Puzzle(n);
 		Display display = new Display(puzzle);
 		new Window(display);
-		new Input(display);*/
+		new Input(display);
 		
 		/*
 		Board solvedState = generateSolvedState();
@@ -16,7 +16,7 @@ public class Main {
 		Board solution = solvePuzzle(puzzle);
 		Display.display(solution);*/
 		
-		generatePuzzleData(n);
+		//generatePuzzleData(n);
 
 	}
 	
